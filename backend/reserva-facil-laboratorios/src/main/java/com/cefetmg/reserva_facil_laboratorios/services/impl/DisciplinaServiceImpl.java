@@ -2,7 +2,9 @@ package com.cefetmg.reserva_facil_laboratorios.services.impl;
 
 import com.cefetmg.reserva_facil_laboratorios.models.Disciplina;
 import com.cefetmg.reserva_facil_laboratorios.models.Professor;
+import com.cefetmg.reserva_facil_laboratorios.models.Reservas;
 import com.cefetmg.reserva_facil_laboratorios.repositories.DisciplinaRepository;
+import com.cefetmg.reserva_facil_laboratorios.repositories.ReservasRepository;
 import com.cefetmg.reserva_facil_laboratorios.services.dtos.request.DisciplinaRequestDTO;
 import com.cefetmg.reserva_facil_laboratorios.services.especification.DisciplinaService;
 import com.cefetmg.reserva_facil_laboratorios.services.especification.ProfessorService;
@@ -18,6 +20,7 @@ public class DisciplinaServiceImpl implements DisciplinaService {
 
   @Autowired private DisciplinaRepository disciplinaRepository;
   @Autowired private ProfessorService professorService;
+  @Autowired private ReservasRepository reservasRepository;
 
   @Override
   public Disciplina cadastrarDisciplina(DisciplinaRequestDTO disciplinaRequestDTO) {
@@ -79,5 +82,12 @@ public class DisciplinaServiceImpl implements DisciplinaService {
     Disciplina disciplina = buscarDisciplina(codigo);
     disciplinaRepository.deleteById(disciplina.getCodigo());
     return "Disciplina excluída com sucesso!";
+  }
+
+  private void validarDisciplinasComReservasFuturas(Long codigoDisciplina){
+    List<Reservas> disciplinasComReservas = reservasRepository.findByReservasPKCodigoDisciplina(codigoDisciplina);
+    if(!disciplinasComReservas.isEmpty()){
+      throw new RuntimeException("Não é permitido a exclusão de disciplinas que possuam reservas cadastradas. Favor excluir as reservas antes de excluir a disciplina");
+    }
   }
 }

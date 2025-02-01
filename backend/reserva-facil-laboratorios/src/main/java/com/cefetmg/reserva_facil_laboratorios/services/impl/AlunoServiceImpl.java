@@ -65,4 +65,5 @@ public class AlunoServiceImpl implements AlunoService {
     alunoRepository.deleteById(aluno.getMatricula());
     return "Aluno deletado com sucesso";
   }
+  
 }

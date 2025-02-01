@@ -1,4 +1,4 @@
-package com.cefetmg.reserva_facil_laboratorios.services.impl.reservas;
+package com.cefetmg.reserva_facil_laboratorios.services.impl;
 
 import com.cefetmg.reserva_facil_laboratorios.models.Reservas;
 import com.cefetmg.reserva_facil_laboratorios.models.pk.ReservasPK;
@@ -7,7 +7,7 @@ import com.cefetmg.reserva_facil_laboratorios.services.dtos.request.ReservaReque
 import com.cefetmg.reserva_facil_laboratorios.services.especification.DisciplinaService;
 import com.cefetmg.reserva_facil_laboratorios.services.especification.LaboratorioService;
 import com.cefetmg.reserva_facil_laboratorios.services.especification.ReservaService;
-import com.cefetmg.reserva_facil_laboratorios.services.impl.reservas.validations.ReservaValidation;
+import com.cefetmg.reserva_facil_laboratorios.services.impl.reservas.validations.reserva.ReservaValidation;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
