@@ -3,9 +3,9 @@ spring:
     name: reserva-facil-laboratorios
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/reserva-facil-laboratorios
-    username: postgres
-    password: postgres
+    url: jdbc:postgresql://pg-reserva-facil-lab.postgres.database.azure.com:5432/reserva-facil-lab
+    username: ${RESERVA_LAB_USERNAME}
+    password: ${RESERVA_LAB_PASSWORD}
 
   jpa:
     hibernate:
