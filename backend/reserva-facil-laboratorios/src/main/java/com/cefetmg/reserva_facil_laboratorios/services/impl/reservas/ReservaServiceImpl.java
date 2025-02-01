@@ -1,4 +1,4 @@
-package com.cefetmg.reserva_facil_laboratorios.services.impl;
+package com.cefetmg.reserva_facil_laboratorios.services.impl.reservas;
 
 import com.cefetmg.reserva_facil_laboratorios.models.Reservas;
 import com.cefetmg.reserva_facil_laboratorios.models.pk.ReservasPK;
@@ -7,11 +7,13 @@ import com.cefetmg.reserva_facil_laboratorios.services.dtos.request.ReservaReque
 import com.cefetmg.reserva_facil_laboratorios.services.especification.DisciplinaService;
 import com.cefetmg.reserva_facil_laboratorios.services.especification.LaboratorioService;
 import com.cefetmg.reserva_facil_laboratorios.services.especification.ReservaService;
+import com.cefetmg.reserva_facil_laboratorios.services.impl.reservas.validations.ReservaValidation;
 import jakarta.persistence.EntityNotFoundException;
-import java.util.List;
-import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ReservaServiceImpl implements ReservaService {
@@ -19,6 +21,9 @@ public class ReservaServiceImpl implements ReservaService {
   @Autowired private ReservasRepository reservasRepository;
   @Autowired private DisciplinaService disciplinaService;
   @Autowired private LaboratorioService laboratorioService;
+
+  @Autowired
+  private List<ReservaValidation> reservaValidations;
 
   // @TODO: Implementar validação de laboratorios reservados para determinada disciplina
   @Override
@@ -34,7 +39,7 @@ public class ReservaServiceImpl implements ReservaService {
 
     reserva.setReservasPK(reservasPK);
 
-    validarDadosReserva(reservaRequestDTO, reservasPK);
+    validarDadosReserva(reservaRequestDTO, reserva);
 
 
     try {
@@ -71,11 +76,11 @@ public class ReservaServiceImpl implements ReservaService {
     return "Reserva excluída com sucesso!";
   }
 
-  private void validarDadosReserva(ReservaRequestDTO reservaRequestDTO, ReservasPK reservasPK) {
+  private void validarDadosReserva(ReservaRequestDTO reservaRequestDTO, Reservas reservas) {
 
-    Optional<Reservas> reservas = reservasRepository.findById(reservasPK);
+    Optional<Reservas> reservaExistente = reservasRepository.findById(reservas.getReservasPK());
 
-    if(reservas.isPresent())
+    if(reservaExistente.isPresent())
       throw new RuntimeException("Reserva já cadastrada no sistema!");
 
     try {
@@ -85,5 +90,8 @@ public class ReservaServiceImpl implements ReservaService {
     } catch (EntityNotFoundException e) {
       throw new RuntimeException("Favor validar os dados de reserva!");
     }
+
+
+    reservaValidations.forEach(validacao -> validacao.validar(reservas));
   }
 }
