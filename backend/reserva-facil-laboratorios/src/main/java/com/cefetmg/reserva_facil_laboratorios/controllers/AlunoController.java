@@ -2,6 +2,7 @@ package com.cefetmg.reserva_facil_laboratorios.controllers;
 
 import com.cefetmg.reserva_facil_laboratorios.models.Aluno;
 import com.cefetmg.reserva_facil_laboratorios.services.dtos.request.AlunoRequestDTO;
+import com.cefetmg.reserva_facil_laboratorios.services.dtos.request.MatricularAlunoRequest;
 import com.cefetmg.reserva_facil_laboratorios.services.especification.AlunoService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,5 +38,11 @@ public class AlunoController {
   @DeleteMapping("/{matricula}")
   public ResponseEntity<String> deletarAluno(@PathVariable Long matricula) {
     return ResponseEntity.ok(alunoService.deletarAluno(matricula));
+  }
+
+  @PostMapping("/matricular-aluno")
+  public ResponseEntity<String> matricularAluno(@RequestBody MatricularAlunoRequest matricularAlunoRequest){
+    alunoService.matricularAluno(matricularAlunoRequest);
+    return ResponseEntity.ok("Aluno matriculado com sucesso!");
   }
 }

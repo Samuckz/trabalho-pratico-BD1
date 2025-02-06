@@ -1,4 +1,4 @@
-package com.cefetmg.reserva_facil_laboratorios.services.impl.reservas.validations.reserva;
+package com.cefetmg.reserva_facil_laboratorios.services.impl.validations.reserva;
 
 import com.cefetmg.reserva_facil_laboratorios.models.Disciplina;
 import com.cefetmg.reserva_facil_laboratorios.models.Laboratorio;

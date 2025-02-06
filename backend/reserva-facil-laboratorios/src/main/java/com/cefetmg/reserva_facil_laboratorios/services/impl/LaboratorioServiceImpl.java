@@ -6,6 +6,7 @@ import com.cefetmg.reserva_facil_laboratorios.repositories.LaboratorioRepository
 import com.cefetmg.reserva_facil_laboratorios.repositories.ReservasRepository;
 import com.cefetmg.reserva_facil_laboratorios.services.dtos.request.LaboratorioRequestDTO;
 import com.cefetmg.reserva_facil_laboratorios.services.especification.LaboratorioService;
+import com.cefetmg.reserva_facil_laboratorios.services.impl.validations.laboratorio.LaboratorioValidation;
 import jakarta.persistence.EntityNotFoundException;
 import java.util.List;
 import java.util.Objects;
@@ -22,8 +23,13 @@ public class LaboratorioServiceImpl implements LaboratorioService {
 
   @Autowired private ReservasRepository reservasRepository;
 
+  @Autowired private List<LaboratorioValidation> laboratorioValidations;
+
   @Override
   public Laboratorio cadastrarLaboratorio(LaboratorioRequestDTO cadastrarLaboratorioRequestDTO) {
+
+    laboratorioValidations.forEach(lab -> lab.validar(cadastrarLaboratorioRequestDTO));
+
     log.info("Cadastrando laboratório...");
     Laboratorio laboratorio =
         new Laboratorio(

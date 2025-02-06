@@ -4,6 +4,7 @@ import com.cefetmg.reserva_facil_laboratorios.models.Professor;
 import com.cefetmg.reserva_facil_laboratorios.repositories.ProfessorRepository;
 import com.cefetmg.reserva_facil_laboratorios.services.dtos.request.ProfessorRequestDTO;
 import com.cefetmg.reserva_facil_laboratorios.services.especification.ProfessorService;
+import com.cefetmg.reserva_facil_laboratorios.services.impl.validations.professor.ProfessorValidation;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.ValidationException;
 import java.util.List;
@@ -16,9 +17,11 @@ import org.springframework.stereotype.Service;
 public class ProfessorServiceImpl implements ProfessorService {
 
   @Autowired private ProfessorRepository professorRepository;
+  @Autowired List<ProfessorValidation> professorValidations;
 
   @Override
   public Professor cadastrarProfessor(ProfessorRequestDTO professorRequestDTO) {
+    professorValidations.forEach(professor -> professor.validar(professorRequestDTO));
     Professor professor =
         new Professor(
             professorRequestDTO.nome(),

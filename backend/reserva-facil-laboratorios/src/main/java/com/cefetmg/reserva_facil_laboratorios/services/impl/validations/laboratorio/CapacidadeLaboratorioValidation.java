@@ -1,7 +1,9 @@
-package com.cefetmg.reserva_facil_laboratorios.services.impl.reservas.validations.laboratorio;
+package com.cefetmg.reserva_facil_laboratorios.services.impl.validations.laboratorio;
 
 import com.cefetmg.reserva_facil_laboratorios.services.dtos.request.LaboratorioRequestDTO;
+import org.springframework.stereotype.Component;
 
+@Component
 public class CapacidadeLaboratorioValidation implements LaboratorioValidation{
     @Override
     public void validar(LaboratorioRequestDTO laboratorioRequestDTO) {

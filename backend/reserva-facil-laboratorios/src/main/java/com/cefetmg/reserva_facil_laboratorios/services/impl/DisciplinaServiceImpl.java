@@ -9,11 +9,12 @@ import com.cefetmg.reserva_facil_laboratorios.services.dtos.request.DisciplinaRe
 import com.cefetmg.reserva_facil_laboratorios.services.especification.DisciplinaService;
 import com.cefetmg.reserva_facil_laboratorios.services.especification.ProfessorService;
 import jakarta.persistence.EntityNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 @Service
 public class DisciplinaServiceImpl implements DisciplinaService {
@@ -80,6 +81,7 @@ public class DisciplinaServiceImpl implements DisciplinaService {
   @Override
   public String deletarDisciplina(Long codigo) {
     Disciplina disciplina = buscarDisciplina(codigo);
+    validarDisciplinasComReservasFuturas(codigo);
     disciplinaRepository.deleteById(disciplina.getCodigo());
     return "Disciplina excluída com sucesso!";
   }

@@ -2,6 +2,8 @@ package com.cefetmg.reserva_facil_laboratorios.services.especification;
 
 import com.cefetmg.reserva_facil_laboratorios.models.Aluno;
 import com.cefetmg.reserva_facil_laboratorios.services.dtos.request.AlunoRequestDTO;
+import com.cefetmg.reserva_facil_laboratorios.services.dtos.request.MatricularAlunoRequest;
+
 import java.util.List;
 
 public interface AlunoService {
@@ -14,4 +16,6 @@ public interface AlunoService {
   Aluno editarAluno(Long matricula, AlunoRequestDTO alunoRequestDTO);
 
   String deletarAluno(Long matricula);
+
+  void matricularAluno(MatricularAlunoRequest matricularAlunoRequest);
 }
