@@ -1,0 +1,32 @@
+<mat-card>
+    <mat-card-title>Deletar Produto</mat-card-title>
+    <form>
+        <mat-form-field>
+           <strong>
+            <input matInput placeholder="Nome" 
+                [(ngModel)]="product.name"
+                name="name"
+                disabled="true"> 
+           </strong>
+        </mat-form-field>
+
+        <mat-form-field>
+           <strong>
+            <input matInput placeholder="Preço (R$)" 
+                [(ngModel)]="product.price"
+                name="price"
+                disabled="true">
+           </strong> 
+        </mat-form-field>
+
+    </form>
+    <button mat-raised-button (click)="delete()" class="excluir">
+        Deletar
+    </button>
+    
+    <button mat-raised-button (click)="navigateProductsPage()" color="primary">
+        Cancelar
+    </button>
+</mat-card>
+
+<!-- TODO: Procurar sobre SnackBar -->
