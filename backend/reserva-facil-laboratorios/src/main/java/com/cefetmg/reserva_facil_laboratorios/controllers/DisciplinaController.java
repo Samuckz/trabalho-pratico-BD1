@@ -2,6 +2,7 @@ package com.cefetmg.reserva_facil_laboratorios.controllers;
 
 import com.cefetmg.reserva_facil_laboratorios.models.Disciplina;
 import com.cefetmg.reserva_facil_laboratorios.services.dtos.request.DisciplinaRequestDTO;
+import com.cefetmg.reserva_facil_laboratorios.services.dtos.request.MatricularAlunoRequest;
 import com.cefetmg.reserva_facil_laboratorios.services.especification.DisciplinaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

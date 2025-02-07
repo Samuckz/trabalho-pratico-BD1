@@ -1,13 +1,14 @@
-package com.cefetmg.reserva_facil_laboratorios.services.impl.reservas;
+package com.cefetmg.reserva_facil_laboratorios.services.impl;
 
 import com.cefetmg.reserva_facil_laboratorios.models.Reservas;
 import com.cefetmg.reserva_facil_laboratorios.models.pk.ReservasPK;
 import com.cefetmg.reserva_facil_laboratorios.repositories.ReservasRepository;
 import com.cefetmg.reserva_facil_laboratorios.services.dtos.request.ReservaRequestDTO;
+import com.cefetmg.reserva_facil_laboratorios.services.dtos.response.ReservaResponse;
 import com.cefetmg.reserva_facil_laboratorios.services.especification.DisciplinaService;
 import com.cefetmg.reserva_facil_laboratorios.services.especification.LaboratorioService;
 import com.cefetmg.reserva_facil_laboratorios.services.especification.ReservaService;
-import com.cefetmg.reserva_facil_laboratorios.services.impl.reservas.validations.ReservaValidation;
+import com.cefetmg.reserva_facil_laboratorios.services.impl.validations.reserva.ReservaValidation;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -51,8 +52,8 @@ public class ReservaServiceImpl implements ReservaService {
   }
 
   @Override
-  public List<Reservas> listarReservas() {
-    return reservasRepository.findAll();
+  public List<ReservaResponse> listarReservas() {
+    return reservasRepository.buscarDadosReserva();
   }
 
   @Override
