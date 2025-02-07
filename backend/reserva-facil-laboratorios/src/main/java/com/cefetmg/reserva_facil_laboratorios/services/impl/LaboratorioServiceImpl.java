@@ -5,6 +5,7 @@ import com.cefetmg.reserva_facil_laboratorios.models.Reservas;
 import com.cefetmg.reserva_facil_laboratorios.repositories.LaboratorioRepository;
 import com.cefetmg.reserva_facil_laboratorios.repositories.ReservasRepository;
 import com.cefetmg.reserva_facil_laboratorios.services.dtos.request.LaboratorioRequestDTO;
+import com.cefetmg.reserva_facil_laboratorios.services.dtos.response.ReservaPorLabResponse;
 import com.cefetmg.reserva_facil_laboratorios.services.especification.LaboratorioService;
 import com.cefetmg.reserva_facil_laboratorios.services.impl.validations.laboratorio.LaboratorioValidation;
 import jakarta.persistence.EntityNotFoundException;
@@ -84,5 +85,10 @@ public class LaboratorioServiceImpl implements LaboratorioService {
     if(!reservasCadastradas.isEmpty()){
       throw new RuntimeException("Não é permitido a exclusão de laboratórios que possuam reservas cadastradas. Favor excluir as reservas antes de excluir o laboratório");
     }
+  }
+
+  @Override
+  public List<ReservaPorLabResponse> buscarReservasPorLaboratorio(){
+    return laboratorioRepository.buscarReservasPorLaboratorio();
   }
 }

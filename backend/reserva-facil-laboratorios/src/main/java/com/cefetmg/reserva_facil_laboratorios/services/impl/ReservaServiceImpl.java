@@ -4,6 +4,7 @@ import com.cefetmg.reserva_facil_laboratorios.models.Reservas;
 import com.cefetmg.reserva_facil_laboratorios.models.pk.ReservasPK;
 import com.cefetmg.reserva_facil_laboratorios.repositories.ReservasRepository;
 import com.cefetmg.reserva_facil_laboratorios.services.dtos.request.ReservaRequestDTO;
+import com.cefetmg.reserva_facil_laboratorios.services.dtos.response.ReservaResponse;
 import com.cefetmg.reserva_facil_laboratorios.services.especification.DisciplinaService;
 import com.cefetmg.reserva_facil_laboratorios.services.especification.LaboratorioService;
 import com.cefetmg.reserva_facil_laboratorios.services.especification.ReservaService;
@@ -51,8 +52,8 @@ public class ReservaServiceImpl implements ReservaService {
   }
 
   @Override
-  public List<Reservas> listarReservas() {
-    return reservasRepository.findAll();
+  public List<ReservaResponse> listarReservas() {
+    return reservasRepository.buscarDadosReserva();
   }
 
   @Override

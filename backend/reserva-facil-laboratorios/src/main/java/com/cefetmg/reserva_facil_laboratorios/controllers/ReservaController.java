@@ -2,6 +2,7 @@ package com.cefetmg.reserva_facil_laboratorios.controllers;
 
 import com.cefetmg.reserva_facil_laboratorios.models.Reservas;
 import com.cefetmg.reserva_facil_laboratorios.services.dtos.request.ReservaRequestDTO;
+import com.cefetmg.reserva_facil_laboratorios.services.dtos.response.ReservaResponse;
 import com.cefetmg.reserva_facil_laboratorios.services.especification.ReservaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,7 @@ public class ReservaController {
   }
 
   @GetMapping
-  public ResponseEntity<List<Reservas>> listarReservas() {
+  public ResponseEntity<List<ReservaResponse>> listarReservas() {
     return ResponseEntity.ok(reservaService.listarReservas());
   }
 

@@ -1,5 +1,6 @@
 package com.cefetmg.reserva_facil_laboratorios.models.pk;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
@@ -15,5 +16,6 @@ import lombok.Setter;
 public class ReservasPK {
   private Long idLaboratorio;
   private Long codigoDisciplina;
+  @Column(name = "agendamento", columnDefinition = "TIMESTAMP")
   private LocalDateTime agendamento;
 }
