@@ -8,9 +8,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { NavComponent } from './components/templates/nav/nav.component';
 import { HomeComponent } from './components/views/home/home.component';
-import { CreateProductComponent } from './components/views/produto/create-product/create-product.component'
+import { CreateProductComponent } from './components/views/produto/create-product/create-product.component';
 import { AppMaterialModule } from './shared/app-material/app-material.module';
-import { CrudProdutoComponent } from './components/views/produto/crud-produto/crud-produto.component'
+import { CrudProdutoComponent } from './components/views/produto/crud-produto/crud-produto.component';
 import { FormsModule } from '@angular/forms';
 import { ProductReadComponent } from './components/views/produto/product-read/product-read.component';
 import { ProductRead2Component } from './components/views/produto/product-read2/product-read2.component';
@@ -19,6 +19,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { ProductUpdateComponent } from './components/views/produto/product-update/product-update.component';
 import { DeleteProductComponent } from './components/views/produto/delete-product/delete-product.component';
+import { CrudReservasComponent } from './components/views/reservas/crud-reservas/crud-reservas.component';
+import { ReservasReadComponent } from './components/views/reservas/reservas-read/reservas-read.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { DeleteProductComponent } from './components/views/produto/delete-produc
     ProductRead2Component,
     ProductUpdateComponent,
     DeleteProductComponent,
+    CrudReservasComponent,
+    ReservasReadComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,9 +47,9 @@ import { DeleteProductComponent } from './components/views/produto/delete-produc
     FormsModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
