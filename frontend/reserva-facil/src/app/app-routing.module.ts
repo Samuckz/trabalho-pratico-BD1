@@ -5,6 +5,7 @@ import { CrudProdutoComponent } from './components/views/produto/crud-produto/cr
 import { CreateProductComponent } from './components/views/produto/create-product/create-product.component';
 import { ProductUpdateComponent } from './components/views/produto/product-update/product-update.component';
 import { DeleteProductComponent } from './components/views/produto/delete-product/delete-product.component';
+import { CrudReservasComponent } from './components/views/reservas/crud-reservas/crud-reservas.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: "products/delete/:id",
     component: DeleteProductComponent
+  },
+  {
+    path: "reservas",
+    component: CrudReservasComponent
   },
 ];
 
