@@ -15,6 +15,8 @@ public interface ReservasRepository extends JpaRepository<Reservas, ReservasPK> 
 
     @Query(value = """
             SELECT r.agendamento AS horario,
+                r.codigo_disciplina,
+                r.id_laboratorio,
                 l.nome AS laboratorio,
                 l.predio AS predio,
                 l.sala AS sala,
