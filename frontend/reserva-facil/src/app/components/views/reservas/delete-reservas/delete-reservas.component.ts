@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ReservaService } from 'src/app/services/reserva.service';
-import { SnackBarService } from '../../produto/services/snackBar-service/snack-bar.service';
 import { ReservaEntity } from '../../../../interfaces/Reserva';
+import { SnackBarService } from '../../produto/services/snackBar-service/snack-bar.service';
 
 @Component({
   selector: 'app-delete-reservas',
@@ -11,7 +11,7 @@ import { ReservaEntity } from '../../../../interfaces/Reserva';
 })
 export class DeleteReservasComponent implements OnInit {
 
-  reserva!: ReservaEntity;
+  reserva: ReservaEntity = {} as ReservaEntity;
 
   constructor(
     private service: ReservaService,
@@ -23,10 +23,17 @@ export class DeleteReservasComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id') as string
 
-    this.service.readById(id).subscribe((reserva) => {
-      this.reserva = reserva;
-      console.log('reserva', reserva);
-
+    this.service.readById(id).subscribe({
+      next: (reserva) => {
+        this.reserva = reserva;
+        console.log('reserva', reserva);
+  
+      },
+      error: () => {
+        const errorMessage = "Houve um erro ao buscar a reserva de id: " + id;
+        this.snackService.createSnackBar(errorMessage);
+        this.navigateReservaPage();
+      }
     })
   }
 

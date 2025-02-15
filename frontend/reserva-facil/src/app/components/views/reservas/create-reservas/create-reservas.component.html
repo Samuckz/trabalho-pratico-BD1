@@ -1,0 +1,30 @@
+<mat-card>
+    <mat-card-title>Reservar Laboratório</mat-card-title>
+    <form>
+        <mat-form-field appearance="fill">
+            <mat-label>Laboratório</mat-label>
+            <mat-select [(ngModel)]="reserva.idLaboratorio" name="idLaboratorio">
+                <mat-option *ngFor="let lab of laboratorios" [value]="lab.id">
+                    {{ lab.nome }} - Sala {{ lab.sala }} (Prédio {{ lab.predio }})
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Disciplina</mat-label>
+            <mat-select [(ngModel)]="reserva.codigoDisciplina" name="codigoDisciplina">
+                <mat-option *ngFor="let disciplina of disciplinas" [value]="disciplina.codigo">
+                    Disciplina {{ disciplina.nome }} - [{{ disciplina.codigo }}]
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+    </form>
+    <button mat-raised-button (click)="salvar()" color="primary">
+        Salvar
+    </button>
+
+    <button mat-raised-button (click)="navigateProductsPage()">
+        Cancelar
+    </button>
+</mat-card>

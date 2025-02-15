@@ -22,6 +22,7 @@ import { DeleteProductComponent } from './components/views/produto/delete-produc
 import { CrudReservasComponent } from './components/views/reservas/crud-reservas/crud-reservas.component';
 import { ReservasReadComponent } from './components/views/reservas/reservas-read/reservas-read.component';
 import { DeleteReservasComponent } from './components/views/reservas/delete-reservas/delete-reservas.component';
+import { CreateReservasComponent } from './components/views/reservas/create-reservas/create-reservas.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { DeleteReservasComponent } from './components/views/reservas/delete-rese
     CrudReservasComponent,
     ReservasReadComponent,
     DeleteReservasComponent,
+    CreateReservasComponent,
   ],
   imports: [
     BrowserModule,

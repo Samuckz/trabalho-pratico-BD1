@@ -24,7 +24,7 @@
 
         <mat-form-field>
             <strong>
-                <input matInput placeholder="Horário" [(ngModel)]="reserva.agendamento" name="horario" disabled="true">
+                <input matInput placeholder="Horário" [value]="reserva.agendamento | date: 'dd/MM/yyyy HH:mm'" name="horario" disabled="true">
             </strong>
         </mat-form-field>
 

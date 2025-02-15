@@ -10,8 +10,8 @@ export interface ReservaDTO {
 }
 
 export interface ReservaEntity {
-  id: number,
+  id?: number,
   agendamento: string,
-  idLaboratorio: number,
-  codigoDisciplina: number,
+  idLaboratorio?: number | null,
+  codigoDisciplina?: number | null,
 }

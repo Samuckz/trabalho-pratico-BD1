@@ -12,6 +12,10 @@ export class ReservaService {
 
   constructor(private httpClient: HttpClient) {}
 
+  create(reserva: ReservaEntity): Observable<ReservaEntity>{
+    return this.httpClient.post<ReservaEntity>(this.API, reserva);
+  }
+
   read(): Observable<ReservaDTO[]> {
     return this.httpClient.get<ReservaDTO[]>(this.API);
   }

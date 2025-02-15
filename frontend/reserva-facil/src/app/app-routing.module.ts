@@ -7,6 +7,7 @@ import { ProductUpdateComponent } from './components/views/produto/product-updat
 import { DeleteProductComponent } from './components/views/produto/delete-product/delete-product.component';
 import { CrudReservasComponent } from './components/views/reservas/crud-reservas/crud-reservas.component';
 import { DeleteReservasComponent } from './components/views/reservas/delete-reservas/delete-reservas.component';
+import { CreateReservasComponent } from './components/views/reservas/create-reservas/create-reservas.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: "reservas",
     component: CrudReservasComponent
+  },
+  {
+    path: "reservas/create",
+    component: CreateReservasComponent
   },
   {
     path: "reservas/delete/:id",
