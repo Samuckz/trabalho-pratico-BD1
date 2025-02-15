@@ -1,0 +1,41 @@
+<mat-card>
+    <mat-card-title>Deletar Reserva</mat-card-title>
+    <form>
+
+        <mat-form-field>
+            <strong>
+                <input matInput placeholder="Id Reserva" [(ngModel)]="reserva.id" name="id" disabled="true">
+            </strong>
+        </mat-form-field>
+
+        <mat-form-field>
+            <strong>
+                <input matInput placeholder="Id Laboratório" [(ngModel)]="reserva.idLaboratorio" name="laboratorio"
+                    disabled="true">
+            </strong>
+        </mat-form-field>
+
+        <mat-form-field>
+            <strong>
+                <input matInput placeholder="Código disciplina" [(ngModel)]="reserva.codigoDisciplina" name="disciplina"
+                    disabled="true">
+            </strong>
+        </mat-form-field>
+
+        <mat-form-field>
+            <strong>
+                <input matInput placeholder="Horário" [(ngModel)]="reserva.agendamento" name="horario" disabled="true">
+            </strong>
+        </mat-form-field>
+
+    </form>
+    <button mat-raised-button (click)="delete()" class="excluir">
+        Deletar
+    </button>
+
+    <button mat-raised-button (click)="navigateReservaPage()" color="primary">
+        Cancelar
+    </button>
+</mat-card>
+
+<!-- TODO: Procurar sobre SnackBar -->

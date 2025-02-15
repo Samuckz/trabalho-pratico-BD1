@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Reserva } from '../components/views/reservas/Reserva';
+import { map, Observable } from 'rxjs';
+import { ReservaDTO, ReservaEntity } from '../interfaces/Reserva';
 import { platform } from 'os';
 
 @Injectable({
@@ -12,18 +12,20 @@ export class ReservaService {
 
   constructor(private httpClient: HttpClient) {}
 
-  read(): Observable<Reserva[]> {
-    return this.httpClient.get<Reserva[]>(this.API);
+  read(): Observable<ReservaDTO[]> {
+    return this.httpClient.get<ReservaDTO[]>(this.API);
   }
 
-  delete(reserva: Reserva): Observable<String> {
+  readById(id: string){
+    const urlConsultada = `${this.API}/buscarReserva/${id}`;
+    return this.httpClient.get<ReservaEntity>(urlConsultada).pipe(
+      map(obj => obj)
+    )
+  }
 
-    const payload = {
-      idLaboratorio: reserva.idLaboratorio,
-      codigoDisciplina: reserva.codigoDisciplina,
-      agendamento: reserva.horario
-    };
+  delete(id: string): Observable<String> {
 
-    return this.httpClient.delete<String>(this.API, {body: payload});
+    const urlConsultada = `${this.API}/deletarReserva/${id}`;
+    return this.httpClient.get<String>(urlConsultada, {responseType: 'text' as 'json'});
   }
 }

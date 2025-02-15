@@ -21,6 +21,7 @@ import { ProductUpdateComponent } from './components/views/produto/product-updat
 import { DeleteProductComponent } from './components/views/produto/delete-product/delete-product.component';
 import { CrudReservasComponent } from './components/views/reservas/crud-reservas/crud-reservas.component';
 import { ReservasReadComponent } from './components/views/reservas/reservas-read/reservas-read.component';
+import { DeleteReservasComponent } from './components/views/reservas/delete-reservas/delete-reservas.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { ReservasReadComponent } from './components/views/reservas/reservas-read
     DeleteProductComponent,
     CrudReservasComponent,
     ReservasReadComponent,
+    DeleteReservasComponent,
   ],
   imports: [
     BrowserModule,
