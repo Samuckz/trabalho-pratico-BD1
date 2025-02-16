@@ -2,9 +2,9 @@ import { CursosEnum } from "./cursos-enum";
 import { DisciplinaModel } from "./disciplina-model";
 
 export interface ProfessorModel {
-    id: number,
+    id?: number | null,
     name: string,
-    especialidade: CursosEnum,
+    especialidade: CursosEnum | null,
     dataNascimento: string,
-    disciplinasMinistradas: DisciplinaModel[]
+    disciplinasMinistradas: DisciplinaModel[] | null
 }
