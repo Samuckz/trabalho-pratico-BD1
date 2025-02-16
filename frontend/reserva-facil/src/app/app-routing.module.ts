@@ -16,6 +16,10 @@ import { CrudProfessorComponent } from './components/views/professor/crud-profes
 import { DeleteProfessoresComponent } from './components/views/professor/delete-professores/delete-professores.component';
 import { UpdateProfessorComponent } from './components/views/professor/update-professor/update-professor.component';
 import { CreateProfessorComponent } from './components/views/professor/create-professor/create-professor.component';
+import { CrudLaboratoriosComponent } from './components/views/laboratorios/crud-laboratorios/crud-laboratorios.component';
+import { DeleteLaboratorioComponent } from './components/views/laboratorios/delete-laboratorio/delete-laboratorio.component';
+import { UpdateLaboratorioComponent } from './components/views/laboratorios/update-laboratorio/update-laboratorio.component';
+import { CreateLaboratorioComponent } from './components/views/laboratorios/create-laboratorio/create-laboratorio.component';
 
 const routes: Routes = [
   {
@@ -81,6 +85,22 @@ const routes: Routes = [
   {
     path: "professores/create",
     component: CreateProfessorComponent
+  },
+  {
+    path: "laboratorios",
+    component: CrudLaboratoriosComponent
+  },
+  {
+    path: "laboratorios/delete/:id",
+    component: DeleteLaboratorioComponent
+  },
+  {
+    path: "laboratorios/update/:id",
+    component: UpdateLaboratorioComponent
+  },
+  {
+    path: "laboratorios/create",
+    component: CreateLaboratorioComponent
   },
 ];
 

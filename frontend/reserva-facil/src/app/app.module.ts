@@ -33,6 +33,11 @@ import { ProfessorReadComponent } from './components/views/professor/professor-r
 import { DeleteProfessoresComponent } from './components/views/professor/delete-professores/delete-professores.component';
 import { UpdateProfessorComponent } from './components/views/professor/update-professor/update-professor.component';
 import { CreateProfessorComponent } from './components/views/professor/create-professor/create-professor.component';
+import { CrudLaboratoriosComponent } from './components/views/laboratorios/crud-laboratorios/crud-laboratorios.component';
+import { LaboratoriosReadComponent } from './components/views/laboratorios/laboratorios-read/laboratorios-read.component';
+import { DeleteLaboratorioComponent } from './components/views/laboratorios/delete-laboratorio/delete-laboratorio.component';
+import { UpdateLaboratorioComponent } from './components/views/laboratorios/update-laboratorio/update-laboratorio.component';
+import { CreateLaboratorioComponent } from './components/views/laboratorios/create-laboratorio/create-laboratorio.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +66,11 @@ import { CreateProfessorComponent } from './components/views/professor/create-pr
     DeleteProfessoresComponent,
     UpdateProfessorComponent,
     CreateProfessorComponent,
+    CrudLaboratoriosComponent,
+    LaboratoriosReadComponent,
+    DeleteLaboratorioComponent,
+    UpdateLaboratorioComponent,
+    CreateLaboratorioComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,35 @@
+<mat-card>
+    <mat-card-title>Alterar Produto</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Id" [(ngModel)]="laboratorio.id" name="id" disabled="true">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Nome do laboratório" [(ngModel)]="laboratorio.nome" name="laboratorio">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Capacidade Máxima" [(ngModel)]="laboratorio.capacidadeMaxima"
+                name="capacidadeMaxima">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Prédio" [(ngModel)]="laboratorio.predio" name="predio">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Sala" [(ngModel)]="laboratorio.sala" name="sala" >
+        </mat-form-field>
+
+
+
+    </form>
+    <button mat-raised-button (click)="update()" color="primary">
+        Salvar
+    </button>
+
+    <button mat-raised-button (click)="navigateLaboratoriosPage()" color="secundary">
+        Cancelar
+    </button>
+</mat-card>

@@ -1,7 +1,7 @@
 export interface LaboratorioModel {
-    id: number,
+    id?: number,
     nome: string,
-    capacidadeMaxima: number,
-    predio: number,
-    sala: number
+    capacidadeMaxima: number | null,
+    predio: number | null,
+    sala: number | null
 }

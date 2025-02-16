@@ -1,0 +1,47 @@
+<mat-card>
+    <mat-card-title>Deletar Laboratorio</mat-card-title>
+    <form>
+
+        <mat-form-field>
+            <strong>
+                <input matInput placeholder="Id Laboratório" [(ngModel)]="laboratorio.id" name="id"
+                    disabled="true">
+            </strong>
+        </mat-form-field>
+
+        <mat-form-field>
+            <strong>
+                <input matInput placeholder="Nome do laboratório" [(ngModel)]="laboratorio.nome" name="laboratorio" disabled="true">
+            </strong>
+        </mat-form-field>
+
+        <mat-form-field>
+            <strong>
+                <input matInput placeholder="Capacidade Máxima" [(ngModel)]="laboratorio.capacidadeMaxima" name="capacidadeMaxima" disabled="true">
+            </strong>
+        </mat-form-field>
+
+        <mat-form-field>
+            <strong>
+                <input matInput placeholder="Prédio" [(ngModel)]="laboratorio.predio" name="predio" disabled="true">
+            </strong>
+        </mat-form-field>
+
+        <mat-form-field>
+            <strong>
+                <input matInput placeholder="Sala" [(ngModel)]="laboratorio.sala" name="sala" disabled="true">
+            </strong>
+        </mat-form-field>
+
+
+    </form>
+    <button mat-raised-button (click)="delete()" class="excluir">
+        Deletar
+    </button>
+
+    <button mat-raised-button (click)="navigateLaboratoriosPage()" color="primary">
+        Cancelar
+    </button>
+</mat-card>
+
+<!-- TODO: Procurar sobre SnackBar -->
