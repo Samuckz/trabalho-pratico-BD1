@@ -12,6 +12,10 @@ import { CrudAlunosComponent } from './components/views/alunos/crud-alunos/crud-
 import { DeleteAlunosComponent } from './components/views/alunos/delete-alunos/delete-alunos.component';
 import { UpdateAlunosComponent } from './components/views/alunos/update-alunos/update-alunos.component';
 import { CreateAlunoComponent } from './components/views/alunos/create-aluno/create-aluno.component';
+import { CrudProfessorComponent } from './components/views/professor/crud-professor/crud-professor.component';
+import { DeleteProfessoresComponent } from './components/views/professor/delete-professores/delete-professores.component';
+import { UpdateProfessorComponent } from './components/views/professor/update-professor/update-professor.component';
+import { CreateProfessorComponent } from './components/views/professor/create-professor/create-professor.component';
 
 const routes: Routes = [
   {
@@ -61,6 +65,22 @@ const routes: Routes = [
   {
     path: "alunos/update/:matricula",
     component: UpdateAlunosComponent
+  },
+  {
+    path: "professores",
+    component: CrudProfessorComponent
+  },
+  {
+    path: "professores/delete/:id",
+    component: DeleteProfessoresComponent
+  },
+  {
+    path: "professores/update/:id",
+    component: UpdateProfessorComponent
+  },
+  {
+    path: "professores/create",
+    component: CreateProfessorComponent
   },
 ];
 

@@ -1,0 +1,37 @@
+<mat-card>
+    <mat-card-title>Alterar Professor</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Id" [(ngModel)]="professor.id" name="id" disabled="true">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Nome" [(ngModel)]="professor.name" name="name">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Data de Nascimento</mat-label>
+            <input matInput [matDatepicker]="picker" [(ngModel)]="professor.dataNascimento" name="dataNascimento">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Especialidade</mat-label>
+            <mat-select [(ngModel)]="professor.especialidade" name="especialidade">
+                <mat-option *ngFor="let curso of listaCursos" [value]="curso.key">
+                    {{ curso.value }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+
+    </form>
+    <button mat-raised-button (click)="update()" color="primary">
+        Salvar
+    </button>
+
+    <button mat-raised-button (click)="navigateProfessoresPage()" color="secundary">
+        Cancelar
+    </button>
+</mat-card>

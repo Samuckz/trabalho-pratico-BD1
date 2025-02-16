@@ -28,6 +28,11 @@ import { AlunosReadComponent } from './components/views/alunos/alunos-read/aluno
 import { DeleteAlunosComponent } from './components/views/alunos/delete-alunos/delete-alunos.component';
 import { UpdateAlunosComponent } from './components/views/alunos/update-alunos/update-alunos.component';
 import { CreateAlunoComponent } from './components/views/alunos/create-aluno/create-aluno.component';
+import { CrudProfessorComponent } from './components/views/professor/crud-professor/crud-professor.component';
+import { ProfessorReadComponent } from './components/views/professor/professor-read/professor-read.component';
+import { DeleteProfessoresComponent } from './components/views/professor/delete-professores/delete-professores.component';
+import { UpdateProfessorComponent } from './components/views/professor/update-professor/update-professor.component';
+import { CreateProfessorComponent } from './components/views/professor/create-professor/create-professor.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +56,11 @@ import { CreateAlunoComponent } from './components/views/alunos/create-aluno/cre
     DeleteAlunosComponent,
     UpdateAlunosComponent,
     CreateAlunoComponent,
+    CrudProfessorComponent,
+    ProfessorReadComponent,
+    DeleteProfessoresComponent,
+    UpdateProfessorComponent,
+    CreateProfessorComponent,
   ],
   imports: [
     BrowserModule,
