@@ -42,7 +42,7 @@ public class ProfessorController {
     return ResponseEntity.ok(professorService.editarProfessoor(id, professorRequestDTO));
   }
 
-  @DeleteMapping("{id}")
+  @GetMapping("deletarProfessor/{id}")
   public ResponseEntity<String> deletarProfessor(@PathVariable Long id) {
     log.info(String.format("Deletando professor de id %s", id));
     return ResponseEntity.ok(professorService.deletarProfessor(id));

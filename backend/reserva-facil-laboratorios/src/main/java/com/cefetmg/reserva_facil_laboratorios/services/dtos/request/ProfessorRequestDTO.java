@@ -5,6 +5,6 @@ import com.cefetmg.reserva_facil_laboratorios.utils.enums.EspecialidadeProfessor
 import java.time.LocalDate;
 
 public record ProfessorRequestDTO(
-        String nome, EspecialidadeProfessorEnum especialidade, LocalDate dataNascimento
+        String name, EspecialidadeProfessorEnum especialidade, LocalDate dataNascimento
 ) {
 }

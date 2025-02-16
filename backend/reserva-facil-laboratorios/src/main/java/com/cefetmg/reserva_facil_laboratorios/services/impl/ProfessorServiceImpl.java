@@ -24,7 +24,7 @@ public class ProfessorServiceImpl implements ProfessorService {
     professorValidations.forEach(professor -> professor.validar(professorRequestDTO));
     Professor professor =
         new Professor(
-            professorRequestDTO.nome(),
+            professorRequestDTO.name(),
             professorRequestDTO.especialidade(),
             professorRequestDTO.dataNascimento());
 
@@ -55,8 +55,8 @@ public class ProfessorServiceImpl implements ProfessorService {
   @Override
   public Professor editarProfessoor(Long id, ProfessorRequestDTO professorRequestDTO) {
     Professor professorEditado = buscarProfessoor(id);
-    if (Objects.nonNull(professorRequestDTO.nome()))
-      professorEditado.setName(professorRequestDTO.nome());
+    if (Objects.nonNull(professorRequestDTO.name()))
+      professorEditado.setName(professorRequestDTO.name());
 
     if (Objects.nonNull(professorRequestDTO.especialidade()))
       professorEditado.setEspecialidade(professorRequestDTO.especialidade());
