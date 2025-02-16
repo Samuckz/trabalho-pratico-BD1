@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { Reserva } from '../Reserva';
 import { ReservaService } from 'src/app/services/reserva.service';
+import { ReservaDTO } from '../../../../interfaces/reserva-model';
 
 @Component({
   selector: 'app-reservas-read',
@@ -10,19 +9,18 @@ import { ReservaService } from 'src/app/services/reserva.service';
 })
 export class ReservasReadComponent implements OnInit {
 
-  reservas: Reserva[] = []
-    displayedColumns = ['horario', 'laboratorio', 'predio', 'sala', 'disciplina', 'action']
+  reservas: ReservaDTO[] = []
+  displayedColumns = ['id', 'horario', 'laboratorio', 'predio', 'sala', 'disciplina', 'action']
 
-    constructor(
-      private service: ReservaService,
-      private dialog: MatDialog
-    ) { }
+  constructor(
+    private service: ReservaService,
+  ) { }
 
-    ngOnInit(): void {
-      this.service.read().subscribe((reservas) => {
-        this.reservas = reservas
-        console.log(reservas);
+  ngOnInit(): void {
+    this.service.read().subscribe((reservas) => {
+      this.reservas = reservas
+      console.log(reservas);
 
-      });
-    }
+    });
+  }
 }

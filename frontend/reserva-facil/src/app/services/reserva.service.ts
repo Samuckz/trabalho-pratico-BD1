@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Reserva } from '../components/views/reservas/Reserva';
+import { map, Observable } from 'rxjs';
+import { ReservaDTO, ReservaEntity } from '../interfaces/reserva-model';
 import { platform } from 'os';
 
 @Injectable({
@@ -12,18 +12,24 @@ export class ReservaService {
 
   constructor(private httpClient: HttpClient) {}
 
-  read(): Observable<Reserva[]> {
-    return this.httpClient.get<Reserva[]>(this.API);
+  create(reserva: ReservaEntity): Observable<ReservaEntity>{
+    return this.httpClient.post<ReservaEntity>(this.API, reserva);
   }
 
-  delete(reserva: Reserva): Observable<String> {
+  read(): Observable<ReservaDTO[]> {
+    return this.httpClient.get<ReservaDTO[]>(this.API);
+  }
 
-    const payload = {
-      idLaboratorio: reserva.idLaboratorio,
-      codigoDisciplina: reserva.codigoDisciplina,
-      agendamento: reserva.horario
-    };
+  readById(id: string){
+    const urlConsultada = `${this.API}/buscarReserva/${id}`;
+    return this.httpClient.get<ReservaEntity>(urlConsultada).pipe(
+      map(obj => obj)
+    )
+  }
 
-    return this.httpClient.delete<String>(this.API, {body: payload});
+  delete(id: string): Observable<String> {
+
+    const urlConsultada = `${this.API}/deletarReserva/${id}`;
+    return this.httpClient.get<String>(urlConsultada, {responseType: 'text' as 'json'});
   }
 }
