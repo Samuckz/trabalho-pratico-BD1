@@ -18,7 +18,7 @@ export class SnackBarService {
       {
         duration: 3000,
         horizontalPosition: 'right',
-        verticalPosition: 'top',
+        verticalPosition: 'bottom',
       }
     )
   }

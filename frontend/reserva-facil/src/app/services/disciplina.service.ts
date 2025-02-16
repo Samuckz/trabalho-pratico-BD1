@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { DisciplinaModel } from '../interfaces/DisciplinaEntity';
+import { DisciplinaModel } from '../interfaces/disciplina-model';
 
 @Injectable({
   providedIn: 'root'

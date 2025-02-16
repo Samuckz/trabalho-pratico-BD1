@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ReservaService } from 'src/app/services/reserva.service';
-import { ReservaEntity } from '../../../../interfaces/Reserva';
+import { ReservaEntity } from '../../../../interfaces/reserva-model';
 import { SnackBarService } from '../../produto/services/snackBar-service/snack-bar.service';
 
 @Component({

@@ -1,5 +1,5 @@
 import { AlunoModel } from "./aluno-model";
-import { CursosEnum } from "./CursosEnum.enum";
+import { CursosEnum } from "./cursos-enum";
 import { ProfessorModel } from "./professor-model";
 
 export interface DisciplinaModel {

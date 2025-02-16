@@ -1,10 +1,10 @@
-import { CursosEnum } from "./CursosEnum.enum";
-import { DisciplinaModel } from "./DisciplinaEntity";
+import { CursosEnum } from "./cursos-enum";
+import { DisciplinaModel } from "./disciplina-model";
 
 export interface AlunoModel {
     matricula: number,
     nome: string,
-    dataNascimento: string, 
+    dataNascimento: string,
     curso: CursosEnum,
     disciplinasMatriculadas: DisciplinaModel[]
-  }
+}

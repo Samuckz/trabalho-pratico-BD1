@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { ReservaDTO, ReservaEntity } from '../interfaces/Reserva';
+import { ReservaDTO, ReservaEntity } from '../interfaces/reserva-model';
 import { platform } from 'os';
 
 @Injectable({
