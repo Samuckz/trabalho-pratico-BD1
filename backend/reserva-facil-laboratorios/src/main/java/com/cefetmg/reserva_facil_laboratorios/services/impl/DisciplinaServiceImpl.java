@@ -64,9 +64,9 @@ public class DisciplinaServiceImpl implements DisciplinaService {
   public Disciplina editarDisciplina(Long codigo, DisciplinaRequestDTO disciplinaRequestDTO) {
     Disciplina disciplina = buscarDisciplina(codigo);
 
-    if (Objects.nonNull(disciplinaRequestDTO.nome())) disciplina.setNome(disciplina.getNome());
+    if (Objects.nonNull(disciplinaRequestDTO.nome())) disciplina.setNome(disciplinaRequestDTO.nome());
 
-    if (Objects.nonNull(disciplinaRequestDTO.curso())) disciplina.setCurso(disciplina.getCurso());
+    if (Objects.nonNull(disciplinaRequestDTO.curso())) disciplina.setCurso(disciplinaRequestDTO.curso());
 
     if (Objects.nonNull(disciplinaRequestDTO.professorId())) {
       Professor novoProfessor =

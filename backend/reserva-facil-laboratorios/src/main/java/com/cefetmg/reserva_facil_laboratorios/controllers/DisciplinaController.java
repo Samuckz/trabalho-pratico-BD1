@@ -36,7 +36,7 @@ public class DisciplinaController {
     return ResponseEntity.ok(disciplinaService.editarDisciplina(codigo, disciplinaRequestDTO));
   }
 
-  @DeleteMapping("/{codigo}")
+  @GetMapping("deletarDisciplina/{codigo}")
   public ResponseEntity<String> deletarDisciplina(@PathVariable Long codigo) {
     return ResponseEntity.ok(disciplinaService.deletarDisciplina(codigo));
   }
