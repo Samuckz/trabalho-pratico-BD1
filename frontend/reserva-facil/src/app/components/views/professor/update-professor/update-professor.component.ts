@@ -3,7 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { CursosEnum } from 'src/app/interfaces/cursos-enum';
 import { ProfessorModel } from 'src/app/interfaces/professor-model';
 import { ProfessorService } from 'src/app/services/professor-service';
-import { SnackBarService } from '../../produto/services/snackBar-service/snack-bar.service';
+import { SnackBarService } from '../../../../services/snack-bar.service';
 
 @Component({
   selector: 'app-update-professor',

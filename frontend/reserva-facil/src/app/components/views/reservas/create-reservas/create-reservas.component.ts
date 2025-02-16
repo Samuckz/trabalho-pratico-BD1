@@ -6,7 +6,7 @@ import { ReservaEntity } from 'src/app/interfaces/reserva-model';
 import { DisciplinaService } from 'src/app/services/disciplina.service';
 import { LaboratorioService } from 'src/app/services/laboratorio.service';
 import { ReservaService } from 'src/app/services/reserva.service';
-import { SnackBarService } from '../../produto/services/snackBar-service/snack-bar.service';
+import { SnackBarService } from '../../../../services/snack-bar.service';
 import { HORAS_DISPONIVEIS } from 'src/app/shared/Constantes';
 import { HttpErrorResponse } from '@angular/common/http';
 

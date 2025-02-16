@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProfessorModel } from 'src/app/interfaces/professor-model';
 import { ProfessorService } from 'src/app/services/professor-service';
-import { SnackBarService } from '../../produto/services/snackBar-service/snack-bar.service';
+import { SnackBarService } from '../../../../services/snack-bar.service';
 import { CursosEnum } from 'src/app/interfaces/cursos-enum';
 
 @Component({

@@ -1,46 +1,30 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './components/views/home/home.component';
-import { CrudProdutoComponent } from './components/views/produto/crud-produto/crud-produto.component';
-import { CreateProductComponent } from './components/views/produto/create-product/create-product.component';
-import { ProductUpdateComponent } from './components/views/produto/product-update/product-update.component';
-import { DeleteProductComponent } from './components/views/produto/delete-product/delete-product.component';
-import { CrudReservasComponent } from './components/views/reservas/crud-reservas/crud-reservas.component';
-import { DeleteReservasComponent } from './components/views/reservas/delete-reservas/delete-reservas.component';
-import { CreateReservasComponent } from './components/views/reservas/create-reservas/create-reservas.component';
+import { CreateAlunoComponent } from './components/views/alunos/create-aluno/create-aluno.component';
 import { CrudAlunosComponent } from './components/views/alunos/crud-alunos/crud-alunos.component';
 import { DeleteAlunosComponent } from './components/views/alunos/delete-alunos/delete-alunos.component';
 import { UpdateAlunosComponent } from './components/views/alunos/update-alunos/update-alunos.component';
-import { CreateAlunoComponent } from './components/views/alunos/create-aluno/create-aluno.component';
-import { CrudProfessorComponent } from './components/views/professor/crud-professor/crud-professor.component';
-import { DeleteProfessoresComponent } from './components/views/professor/delete-professores/delete-professores.component';
-import { UpdateProfessorComponent } from './components/views/professor/update-professor/update-professor.component';
-import { CreateProfessorComponent } from './components/views/professor/create-professor/create-professor.component';
+import { CreateDisciplinaComponent } from './components/views/disciplinas/create-disciplina/create-disciplina.component';
+import { CrudDisciplinasComponent } from './components/views/disciplinas/crud-disciplinas/crud-disciplinas.component';
+import { DeleteDisciplinaComponent } from './components/views/disciplinas/delete-disciplina/delete-disciplina.component';
+import { UpdateDisciplinaComponent } from './components/views/disciplinas/update-disciplina/update-disciplina.component';
+import { HomeComponent } from './components/views/home/home.component';
+import { CreateLaboratorioComponent } from './components/views/laboratorios/create-laboratorio/create-laboratorio.component';
 import { CrudLaboratoriosComponent } from './components/views/laboratorios/crud-laboratorios/crud-laboratorios.component';
 import { DeleteLaboratorioComponent } from './components/views/laboratorios/delete-laboratorio/delete-laboratorio.component';
 import { UpdateLaboratorioComponent } from './components/views/laboratorios/update-laboratorio/update-laboratorio.component';
-import { CreateLaboratorioComponent } from './components/views/laboratorios/create-laboratorio/create-laboratorio.component';
+import { CreateProfessorComponent } from './components/views/professor/create-professor/create-professor.component';
+import { CrudProfessorComponent } from './components/views/professor/crud-professor/crud-professor.component';
+import { DeleteProfessoresComponent } from './components/views/professor/delete-professores/delete-professores.component';
+import { UpdateProfessorComponent } from './components/views/professor/update-professor/update-professor.component';
+import { CreateReservasComponent } from './components/views/reservas/create-reservas/create-reservas.component';
+import { CrudReservasComponent } from './components/views/reservas/crud-reservas/crud-reservas.component';
+import { DeleteReservasComponent } from './components/views/reservas/delete-reservas/delete-reservas.component';
 
 const routes: Routes = [
   {
     path: "",
     component: HomeComponent
-  },
-  {
-    path: "products",
-    component: CrudProdutoComponent
-  },
-  {
-    path: "products/create",
-    component: CreateProductComponent
-  },
-  {
-    path: "products/update/:id",
-    component: ProductUpdateComponent
-  },
-  {
-    path: "products/delete/:id",
-    component: DeleteProductComponent
   },
   {
     path: "reservas",
@@ -101,6 +85,22 @@ const routes: Routes = [
   {
     path: "laboratorios/create",
     component: CreateLaboratorioComponent
+  },
+  {
+    path: "disciplinas",
+    component: CrudDisciplinasComponent
+  },
+  {
+    path: "disciplinas/delete/:codigo",
+    component: DeleteDisciplinaComponent
+  },
+  {
+    path: "disciplinas/update/:codigo",
+    component: UpdateDisciplinaComponent
+  },
+  {
+    path: "disciplinas/create",
+    component: CreateDisciplinaComponent
   },
 ];
 

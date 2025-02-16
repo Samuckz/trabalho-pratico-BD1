@@ -5,7 +5,13 @@ import { ProfessorModel } from "./professor-model";
 export interface DisciplinaModel {
     codigo: number,
     nome: string,
+    curso: CursosEnum | null,
+    professorId?: ProfessorModel | null,
+    alunosMatriculados: AlunoModel[]
+}
+
+export interface DisciplinaRequestDTO {
+    nome: string,
     curso: CursosEnum,
-    professorId: ProfessorModel, 
-    alunosMatriculados: AlunoModel[] 
+    professorId?: number
 }

@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { CursosEnum } from 'src/app/interfaces/cursos-enum';
 import { ProfessorModel } from 'src/app/interfaces/professor-model';
 import { AlunoService } from 'src/app/services/aluno-service';
-import { SnackBarService } from '../../produto/services/snackBar-service/snack-bar.service';
+import { SnackBarService } from '../../../../services/snack-bar.service';
 import { ProfessorService } from 'src/app/services/professor-service';
 
 @Component({

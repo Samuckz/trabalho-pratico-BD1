@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LaboratorioModel } from 'src/app/interfaces/laboratorio-model';
 import { LaboratorioService } from 'src/app/services/laboratorio.service';
-import { SnackBarService } from '../../produto/services/snackBar-service/snack-bar.service';
+import { SnackBarService } from '../../../../services/snack-bar.service';
 
 @Component({
   selector: 'app-update-laboratorio',

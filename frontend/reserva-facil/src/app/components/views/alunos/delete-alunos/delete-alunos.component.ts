@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlunoModel } from 'src/app/interfaces/aluno-model';
 import { AlunoService } from 'src/app/services/aluno-service';
-import { SnackBarService } from '../../produto/services/snackBar-service/snack-bar.service';
+import { SnackBarService } from '../../../../services/snack-bar.service';
 import { CursosEnum } from 'src/app/interfaces/cursos-enum';
 
 @Component({

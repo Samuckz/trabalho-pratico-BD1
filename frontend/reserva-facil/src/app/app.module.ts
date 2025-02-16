@@ -8,17 +8,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { NavComponent } from './components/templates/nav/nav.component';
 import { HomeComponent } from './components/views/home/home.component';
-import { CreateProductComponent } from './components/views/produto/create-product/create-product.component';
 import { AppMaterialModule } from './shared/app-material/app-material.module';
-import { CrudProdutoComponent } from './components/views/produto/crud-produto/crud-produto.component';
 import { FormsModule } from '@angular/forms';
-import { ProductReadComponent } from './components/views/produto/product-read/product-read.component';
-import { ProductRead2Component } from './components/views/produto/product-read2/product-read2.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-import { ProductUpdateComponent } from './components/views/produto/product-update/product-update.component';
-import { DeleteProductComponent } from './components/views/produto/delete-product/delete-product.component';
 import { CrudReservasComponent } from './components/views/reservas/crud-reservas/crud-reservas.component';
 import { ReservasReadComponent } from './components/views/reservas/reservas-read/reservas-read.component';
 import { DeleteReservasComponent } from './components/views/reservas/delete-reservas/delete-reservas.component';
@@ -38,6 +32,11 @@ import { LaboratoriosReadComponent } from './components/views/laboratorios/labor
 import { DeleteLaboratorioComponent } from './components/views/laboratorios/delete-laboratorio/delete-laboratorio.component';
 import { UpdateLaboratorioComponent } from './components/views/laboratorios/update-laboratorio/update-laboratorio.component';
 import { CreateLaboratorioComponent } from './components/views/laboratorios/create-laboratorio/create-laboratorio.component';
+import { CrudDisciplinasComponent } from './components/views/disciplinas/crud-disciplinas/crud-disciplinas.component';
+import { DisciplinasReadComponent } from './components/views/disciplinas/disciplinas-read/disciplinas-read.component';
+import { DeleteDisciplinaComponent } from './components/views/disciplinas/delete-disciplina/delete-disciplina.component';
+import { UpdateDisciplinaComponent } from './components/views/disciplinas/update-disciplina/update-disciplina.component';
+import { CreateDisciplinaComponent } from './components/views/disciplinas/create-disciplina/create-disciplina.component';
 
 @NgModule({
   declarations: [
@@ -46,12 +45,6 @@ import { CreateLaboratorioComponent } from './components/views/laboratorios/crea
     FooterComponent,
     NavComponent,
     HomeComponent,
-    CreateProductComponent,
-    CrudProdutoComponent,
-    ProductReadComponent,
-    ProductRead2Component,
-    ProductUpdateComponent,
-    DeleteProductComponent,
     CrudReservasComponent,
     ReservasReadComponent,
     DeleteReservasComponent,
@@ -71,6 +64,11 @@ import { CreateLaboratorioComponent } from './components/views/laboratorios/crea
     DeleteLaboratorioComponent,
     UpdateLaboratorioComponent,
     CreateLaboratorioComponent,
+    CrudDisciplinasComponent,
+    DisciplinasReadComponent,
+    DeleteDisciplinaComponent,
+    UpdateDisciplinaComponent,
+    CreateDisciplinaComponent,
   ],
   imports: [
     BrowserModule,

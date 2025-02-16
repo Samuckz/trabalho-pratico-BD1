@@ -1,0 +1,40 @@
+<mat-card>
+    <mat-card-title>Deletar disciplina</mat-card-title>
+    <form>
+
+        <mat-form-field>
+            <strong>
+                <input matInput placeholder="Código disciplina" [(ngModel)]="disciplina.codigo" name="codigo"
+                    disabled="true">
+            </strong>
+        </mat-form-field>
+
+        <mat-form-field>
+            <strong>
+                <input matInput placeholder="Disciplina" [(ngModel)]="disciplina.nome" name="disciplina" disabled="true">
+            </strong>
+        </mat-form-field>
+
+        <mat-form-field>
+            <strong>
+                <input matInput placeholder="Curso" [value]="obterNomeCurso(disciplina.curso!)" name="curso" disabled="true">
+            </strong>
+        </mat-form-field>
+
+        <mat-form-field>
+            <strong>
+                <input matInput placeholder="Professor" [value]="disciplina.professorId?.name" name="professor" disabled="true">
+            </strong>
+        </mat-form-field>
+
+    </form>
+    <button mat-raised-button (click)="delete()" class="excluir">
+        Deletar
+    </button>
+
+    <button mat-raised-button (click)="navigateDisciplinasPage()" color="primary">
+        Cancelar
+    </button>
+</mat-card>
+
+<!-- TODO: Procurar sobre SnackBar -->
