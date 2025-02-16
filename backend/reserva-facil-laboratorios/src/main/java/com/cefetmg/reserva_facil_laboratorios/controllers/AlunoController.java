@@ -35,7 +35,7 @@ public class AlunoController {
     return ResponseEntity.ok(alunoService.editarAluno(matricula, alunoRequestDTO));
   }
 
-  @DeleteMapping("/{matricula}")
+  @GetMapping("/deletarAluno/{matricula}")
   public ResponseEntity<String> deletarAluno(@PathVariable Long matricula) {
     return ResponseEntity.ok(alunoService.deletarAluno(matricula));
   }
