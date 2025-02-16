@@ -25,13 +25,13 @@ public class ReservaController {
     return ResponseEntity.ok(reservaService.listarReservas());
   }
 
-  @PostMapping("/buscarReserva")
-  public ResponseEntity<Reservas> buscarReserva(@RequestBody ReservaRequestDTO reservaRequestDTO) {
-    return ResponseEntity.ok(reservaService.buscarReserva(reservaRequestDTO));
+  @GetMapping("/buscarReserva/{id}")
+  public ResponseEntity<Reservas> buscarReserva(@PathVariable Long id) {
+    return ResponseEntity.ok(reservaService.buscarReserva(id));
   }
 
-  @DeleteMapping
-  public ResponseEntity<String> deletarReserva(@RequestBody ReservaRequestDTO reservaRequestDTO) {
-    return ResponseEntity.ok(reservaService.excluirReserva(reservaRequestDTO));
+  @GetMapping("/deletarReserva/{id}")
+  public ResponseEntity<String> deletarReserva(@PathVariable Long id) {
+    return ResponseEntity.ok(reservaService.excluirReserva(id));
   }
 }

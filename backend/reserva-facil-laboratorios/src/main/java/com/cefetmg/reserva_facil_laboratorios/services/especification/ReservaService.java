@@ -11,7 +11,7 @@ public interface ReservaService {
 
   List<ReservaResponse> listarReservas();
 
-  Reservas buscarReserva(ReservaRequestDTO reservaRequestDTO);
+  Reservas buscarReserva(Long id);
 
-  String excluirReserva(ReservaRequestDTO reservaRequestDTO);
+  String excluirReserva(Long id);
 }

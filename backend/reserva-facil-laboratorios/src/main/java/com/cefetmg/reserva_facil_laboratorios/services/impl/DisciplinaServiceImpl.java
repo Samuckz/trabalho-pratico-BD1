@@ -87,7 +87,7 @@ public class DisciplinaServiceImpl implements DisciplinaService {
   }
 
   private void validarDisciplinasComReservasFuturas(Long codigoDisciplina){
-    List<Reservas> disciplinasComReservas = reservasRepository.findByReservasPKCodigoDisciplina(codigoDisciplina);
+    List<Reservas> disciplinasComReservas = reservasRepository.findByCodigoDisciplina(codigoDisciplina);
     if(!disciplinasComReservas.isEmpty()){
       throw new RuntimeException("Não é permitido a exclusão de disciplinas que possuam reservas cadastradas. Favor excluir as reservas antes de excluir a disciplina");
     }

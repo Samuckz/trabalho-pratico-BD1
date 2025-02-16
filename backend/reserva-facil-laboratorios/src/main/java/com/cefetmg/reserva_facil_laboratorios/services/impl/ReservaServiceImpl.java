@@ -1,7 +1,6 @@
 package com.cefetmg.reserva_facil_laboratorios.services.impl;
 
 import com.cefetmg.reserva_facil_laboratorios.models.Reservas;
-import com.cefetmg.reserva_facil_laboratorios.models.pk.ReservasPK;
 import com.cefetmg.reserva_facil_laboratorios.repositories.ReservasRepository;
 import com.cefetmg.reserva_facil_laboratorios.services.dtos.request.ReservaRequestDTO;
 import com.cefetmg.reserva_facil_laboratorios.services.dtos.response.ReservaResponse;
@@ -32,13 +31,11 @@ public class ReservaServiceImpl implements ReservaService {
 
 
     Reservas reserva = new Reservas();
-    ReservasPK reservasPK =
-        new ReservasPK(
-            reservaRequestDTO.idLaboratorio(),
-            reservaRequestDTO.codigoDisciplina(),
-            reservaRequestDTO.agendamento());
 
-    reserva.setReservasPK(reservasPK);
+    reserva.setIdLaboratorio(reservaRequestDTO.idLaboratorio());
+    reserva.setCodigoDisciplina(reservaRequestDTO.codigoDisciplina());
+    reserva.setAgendamento(reservaRequestDTO.agendamento());
+
 
     validarDadosReserva(reservaRequestDTO, reserva);
 
@@ -57,13 +54,9 @@ public class ReservaServiceImpl implements ReservaService {
   }
 
   @Override
-  public Reservas buscarReserva(ReservaRequestDTO reservaRequestDTO) {
-    ReservasPK reservasPK =
-        new ReservasPK(
-            reservaRequestDTO.idLaboratorio(),
-            reservaRequestDTO.codigoDisciplina(),
-            reservaRequestDTO.agendamento());
-    Optional<Reservas> reserva = reservasRepository.findById(reservasPK);
+  // TODO: Adaptar rota para devolver valores plausivies de servem exibidos
+  public Reservas buscarReserva(Long id) {
+    Optional<Reservas> reserva = reservasRepository.findById(id);
 
     if (reserva.isEmpty()) throw new EntityNotFoundException("Não foi encontrada nenhuma reserva");
 
@@ -71,15 +64,17 @@ public class ReservaServiceImpl implements ReservaService {
   }
 
   @Override
-  public String excluirReserva(ReservaRequestDTO reservaRequestDTO) {
-    Reservas reserva = buscarReserva(reservaRequestDTO);
+  public String excluirReserva(Long id) {
+    Reservas reserva = buscarReserva(id);
     reservasRepository.delete(reserva);
     return "Reserva excluída com sucesso!";
   }
 
   private void validarDadosReserva(ReservaRequestDTO reservaRequestDTO, Reservas reservas) {
 
-    Optional<Reservas> reservaExistente = reservasRepository.findById(reservas.getReservasPK());
+    Optional<Reservas> reservaExistente = reservasRepository.findByIdLaboratorioAndCodigoDisciplinaAndAgendamento(
+            reservaRequestDTO.idLaboratorio(), reservaRequestDTO.codigoDisciplina(), reservaRequestDTO.agendamento()
+    );
 
     if(reservaExistente.isPresent())
       throw new RuntimeException("Reserva já cadastrada no sistema!");

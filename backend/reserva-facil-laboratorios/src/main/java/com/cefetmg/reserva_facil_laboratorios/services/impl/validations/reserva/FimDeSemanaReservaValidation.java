@@ -11,10 +11,10 @@ import java.time.LocalDateTime;
 public class FimDeSemanaReservaValidation implements ReservaValidation{
     @Override
     public void validar(Reservas reservas) {
-        LocalDateTime dataReserva = reservas.getReservasPK().getAgendamento();
+        LocalDateTime dataReserva = reservas.getAgendamento();
 
         if(dataReserva.getDayOfWeek().equals(DayOfWeek.SATURDAY) || dataReserva.getDayOfWeek().equals(DayOfWeek.SUNDAY)){
-            throw new ReservaException("Não é permitido reservas laboratórios durante os fins de semana.");
+            throw new RuntimeException("Não é permitido reservas laboratórios durante os fins de semana.");
         }
     }
 }

@@ -80,7 +80,7 @@ public class LaboratorioServiceImpl implements LaboratorioService {
   }
 
   private void validarLaboratorioComReservas(Long id){
-    List<Reservas> reservasCadastradas = reservasRepository.findByReservasPKIdLaboratorio(id);
+    List<Reservas> reservasCadastradas = reservasRepository.findByIdLaboratorio(id);
 
     if(!reservasCadastradas.isEmpty()){
       throw new RuntimeException("Não é permitido a exclusão de laboratórios que possuam reservas cadastradas. Favor excluir as reservas antes de excluir o laboratório");

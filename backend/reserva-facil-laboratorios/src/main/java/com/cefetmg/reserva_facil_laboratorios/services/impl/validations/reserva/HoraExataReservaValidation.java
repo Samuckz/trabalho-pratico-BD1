@@ -10,10 +10,10 @@ import java.time.LocalDateTime;
 public class HoraExataReservaValidation implements ReservaValidation{
     @Override
     public void validar(Reservas reservas) {
-        LocalDateTime localDateTime = reservas.getReservasPK().getAgendamento();
+        LocalDateTime localDateTime = reservas.getAgendamento();
 
         if(localDateTime.getMinute() != 0 || localDateTime.getSecond() != 0){
-            throw new ReservaException("Favor reservas o laboratório em um horario inteiro");
+            throw new RuntimeException("Favor reservas o laboratório em um horario inteiro");
         }
     }
 }

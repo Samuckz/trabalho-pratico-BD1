@@ -1,13 +1,12 @@
 package com.cefetmg.reserva_facil_laboratorios.models;
 
-import com.cefetmg.reserva_facil_laboratorios.models.pk.ReservasPK;
-import jakarta.persistence.EmbeddedId;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "TB_RESERVAS")
@@ -16,5 +15,11 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Reservas {
-  @EmbeddedId private ReservasPK reservasPK;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
+  private Long idLaboratorio;
+  private Long codigoDisciplina;
+  @Column(name = "agendamento", columnDefinition = "TIMESTAMP")
+  private LocalDateTime agendamento;
 }
