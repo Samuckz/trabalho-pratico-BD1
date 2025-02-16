@@ -23,6 +23,11 @@ import { CrudReservasComponent } from './components/views/reservas/crud-reservas
 import { ReservasReadComponent } from './components/views/reservas/reservas-read/reservas-read.component';
 import { DeleteReservasComponent } from './components/views/reservas/delete-reservas/delete-reservas.component';
 import { CreateReservasComponent } from './components/views/reservas/create-reservas/create-reservas.component';
+import { CrudAlunosComponent } from './components/views/alunos/crud-alunos/crud-alunos.component';
+import { AlunosReadComponent } from './components/views/alunos/alunos-read/alunos-read.component';
+import { DeleteAlunosComponent } from './components/views/alunos/delete-alunos/delete-alunos.component';
+import { UpdateAlunosComponent } from './components/views/alunos/update-alunos/update-alunos.component';
+import { CreateAlunoComponent } from './components/views/alunos/create-aluno/create-aluno.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +46,11 @@ import { CreateReservasComponent } from './components/views/reservas/create-rese
     ReservasReadComponent,
     DeleteReservasComponent,
     CreateReservasComponent,
+    CrudAlunosComponent,
+    AlunosReadComponent,
+    DeleteAlunosComponent,
+    UpdateAlunosComponent,
+    CreateAlunoComponent,
   ],
   imports: [
     BrowserModule,

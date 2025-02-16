@@ -2,9 +2,9 @@ import { CursosEnum } from "./cursos-enum";
 import { DisciplinaModel } from "./disciplina-model";
 
 export interface AlunoModel {
-    matricula: number,
+    matricula?: number,
     nome: string,
-    dataNascimento: string,
-    curso: CursosEnum,
-    disciplinasMatriculadas: DisciplinaModel[]
-}
+    dataNascimento: string, 
+    curso?: CursosEnum | null,
+    disciplinasMatriculadas?: DisciplinaModel[]
+  }

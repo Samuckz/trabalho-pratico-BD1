@@ -8,6 +8,10 @@ import { DeleteProductComponent } from './components/views/produto/delete-produc
 import { CrudReservasComponent } from './components/views/reservas/crud-reservas/crud-reservas.component';
 import { DeleteReservasComponent } from './components/views/reservas/delete-reservas/delete-reservas.component';
 import { CreateReservasComponent } from './components/views/reservas/create-reservas/create-reservas.component';
+import { CrudAlunosComponent } from './components/views/alunos/crud-alunos/crud-alunos.component';
+import { DeleteAlunosComponent } from './components/views/alunos/delete-alunos/delete-alunos.component';
+import { UpdateAlunosComponent } from './components/views/alunos/update-alunos/update-alunos.component';
+import { CreateAlunoComponent } from './components/views/alunos/create-aluno/create-aluno.component';
 
 const routes: Routes = [
   {
@@ -41,6 +45,22 @@ const routes: Routes = [
   {
     path: "reservas/delete/:id",
     component: DeleteReservasComponent
+  },
+  {
+    path: "alunos",
+    component: CrudAlunosComponent
+  },
+  {
+    path: "alunos/create",
+    component: CreateAlunoComponent
+  },
+  {
+    path: "alunos/delete/:matricula",
+    component: DeleteAlunosComponent
+  },
+  {
+    path: "alunos/update/:matricula",
+    component: UpdateAlunosComponent
   },
 ];
 
