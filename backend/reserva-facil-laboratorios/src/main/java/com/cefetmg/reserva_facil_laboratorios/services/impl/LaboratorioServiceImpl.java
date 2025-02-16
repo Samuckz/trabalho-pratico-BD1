@@ -59,6 +59,8 @@ public class LaboratorioServiceImpl implements LaboratorioService {
   @Override
   public Laboratorio editarLaboratorio(Long id, LaboratorioRequestDTO dto) {
     Laboratorio labEditado = buscarLaboratorio(id);
+    laboratorioValidations.forEach(lab -> lab.validar(dto));
+
     if (Objects.nonNull(dto.capacidadeMaxima()))
       labEditado.setCapacidadeMaxima(dto.capacidadeMaxima());
 

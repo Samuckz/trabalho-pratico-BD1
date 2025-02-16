@@ -36,7 +36,7 @@ public class LaboratorioController {
     return ResponseEntity.ok(laboratorioService.editarLaboratorio(id, dto));
   }
 
-  @DeleteMapping("/{id}")
+  @GetMapping("deletarLaboratorio/{id}")
   public ResponseEntity<String> deletarLaboratorio(@PathVariable Long id) {
     return ResponseEntity.ok(laboratorioService.deletarLaboratorio(id));
   }
