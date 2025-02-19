@@ -1,4 +1,4 @@
-package com.cefetmg.reserva_facil_laboratorios.services.dtos.response;
+package com.cefetmg.reserva_facil_laboratorios.repositories.projections;
 
 import java.time.LocalDateTime;
 

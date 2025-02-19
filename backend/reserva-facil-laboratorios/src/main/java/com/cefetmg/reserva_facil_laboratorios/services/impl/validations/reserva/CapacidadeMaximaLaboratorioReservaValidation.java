@@ -23,11 +23,9 @@ public class CapacidadeMaximaLaboratorioReservaValidation implements ReservaVali
 
         Laboratorio laboratorio = laboratorioRepository.findById(reservas.getIdLaboratorio()).get();
 
-        if (disciplina.getAlunosMatriculados().size() > laboratorio.getCapacidadeMaxima()){
+        if (disciplina.getAlunosMatriculados().size() >= laboratorio.getCapacidadeMaxima()){
             throw new RuntimeException("O laboratório não comporta a quantidade de alunos desta disciplina");
         }
-
-
 
     }
 }

@@ -2,7 +2,7 @@ package com.cefetmg.reserva_facil_laboratorios.repositories;
 
 import com.cefetmg.reserva_facil_laboratorios.models.Reservas;
 import com.cefetmg.reserva_facil_laboratorios.models.pk.ReservasPK;
-import com.cefetmg.reserva_facil_laboratorios.services.dtos.response.ReservaResponse;
+import com.cefetmg.reserva_facil_laboratorios.repositories.projections.ReservaResponse;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

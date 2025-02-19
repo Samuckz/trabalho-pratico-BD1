@@ -5,7 +5,7 @@ import com.cefetmg.reserva_facil_laboratorios.models.Reservas;
 import com.cefetmg.reserva_facil_laboratorios.repositories.LaboratorioRepository;
 import com.cefetmg.reserva_facil_laboratorios.repositories.ReservasRepository;
 import com.cefetmg.reserva_facil_laboratorios.services.dtos.request.LaboratorioRequestDTO;
-import com.cefetmg.reserva_facil_laboratorios.services.dtos.response.ReservaPorLabResponse;
+import com.cefetmg.reserva_facil_laboratorios.repositories.projections.LaboratorioProjection;
 import com.cefetmg.reserva_facil_laboratorios.services.especification.LaboratorioService;
 import com.cefetmg.reserva_facil_laboratorios.services.impl.validations.laboratorio.LaboratorioValidation;
 import jakarta.persistence.EntityNotFoundException;
@@ -90,7 +90,14 @@ public class LaboratorioServiceImpl implements LaboratorioService {
   }
 
   @Override
-  public List<ReservaPorLabResponse> buscarReservasPorLaboratorio(){
-    return laboratorioRepository.buscarReservasPorLaboratorio();
+  public List<Laboratorio> listarLaboratorioSemReserva(){
+    List<LaboratorioProjection> labs =  laboratorioRepository.listarLaboratoriosSemReserva();
+    return labs.stream().map(lab -> new Laboratorio(
+            lab.getId(),
+            lab.getNome(),
+            lab.getCapacidadeMaxima(),
+            lab.getPredio(),
+            lab.getSala()
+    )).toList();
   }
 }

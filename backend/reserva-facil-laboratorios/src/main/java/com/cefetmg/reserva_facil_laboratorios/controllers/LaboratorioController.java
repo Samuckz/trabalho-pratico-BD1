@@ -2,7 +2,6 @@ package com.cefetmg.reserva_facil_laboratorios.controllers;
 
 import com.cefetmg.reserva_facil_laboratorios.models.Laboratorio;
 import com.cefetmg.reserva_facil_laboratorios.services.dtos.request.LaboratorioRequestDTO;
-import com.cefetmg.reserva_facil_laboratorios.services.dtos.response.ReservaPorLabResponse;
 import com.cefetmg.reserva_facil_laboratorios.services.especification.LaboratorioService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,8 +40,8 @@ public class LaboratorioController {
     return ResponseEntity.ok(laboratorioService.deletarLaboratorio(id));
   }
 
-  @GetMapping("/reserva-por-lab")
-  public ResponseEntity<List<ReservaPorLabResponse>> buscarReservasPorLaboratorio(){
-    return ResponseEntity.ok(laboratorioService.buscarReservasPorLaboratorio());
+  @GetMapping("/sem-reservas")
+  public ResponseEntity<List<Laboratorio>> buscarReservasPorLaboratorio(){
+    return ResponseEntity.ok(laboratorioService.listarLaboratorioSemReserva());
   }
 }
