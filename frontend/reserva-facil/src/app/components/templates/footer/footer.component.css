@@ -1,0 +1,10 @@
+.footer{
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.footer > span {
+    font-size: 1.2rem;
+    font-weight: 300;
+}

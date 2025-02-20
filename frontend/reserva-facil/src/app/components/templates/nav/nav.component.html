@@ -1,0 +1,40 @@
+<mat-sidenav-container class="container">
+    <mat-sidenav class="sidenav v-middle" mode="side" opened fixedInViewport="true" fixedTopGap="64">
+
+        <mat-nav-list class="nav-list">
+            <a mat-list-item routerLink="/" class="link-nav">
+                <i class="material-icons">home</i>
+                <h3> Home </h3>
+            </a>
+            <a mat-list-item routerLink="reservas" class="link-nav">
+                <i class="material-icons">calendar_month</i>
+                <h3> Reservas </h3>
+            </a>
+            <a mat-list-item routerLink="alunos" class="link-nav">
+                <i class="material-icons">person</i>
+                <h3> Alunos </h3>
+            </a>
+            <a mat-list-item routerLink="professores" class="link-nav">
+                <i class="material-icons">engineering</i>
+                <h3> Professores </h3>
+            </a>
+            <a mat-list-item routerLink="disciplinas" class="link-nav">
+                <i class="material-icons">school</i>
+                <h3> Disciplinas </h3>
+            </a>
+            <a mat-list-item routerLink="laboratorios" class="link-nav">
+                <i class="material-icons">science</i>
+                <h3> Laboratorios </h3>
+            </a>
+            <a mat-list-item routerLink="matriculas" class="link-nav">
+                <i class="material-icons">science</i>
+                <h3> Matrículas </h3>
+            </a>
+
+        </mat-nav-list>
+
+    </mat-sidenav>
+    <mat-sidenav-content class="content">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

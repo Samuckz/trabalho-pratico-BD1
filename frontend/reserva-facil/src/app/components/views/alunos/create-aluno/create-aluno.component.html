@@ -1,0 +1,33 @@
+<mat-card>
+    <mat-card-title>Reservar Laboratório</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome" [(ngModel)]="aluno.nome" name="name">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Data de Nascimento</mat-label>
+            <input matInput [matDatepicker]="picker" [(ngModel)]="aluno.dataNascimento" name="dataNascimento">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Curso</mat-label>
+            <mat-select [(ngModel)]="aluno.curso" name="curso">
+                <mat-option *ngFor="let curso of listaCursos" [value]="curso.key">
+                    {{ curso.value }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+
+    </form>
+    <button mat-raised-button (click)="salvar()" color="primary" [disabled]="ativarBotaoSalvar">
+        Salvar
+    </button>
+
+    <button mat-raised-button (click)="navigateProductsPage()">
+        Cancelar
+    </button>
+</mat-card>

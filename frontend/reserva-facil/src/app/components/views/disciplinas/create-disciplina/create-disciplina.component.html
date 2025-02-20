@@ -1,0 +1,35 @@
+<mat-card>
+    <mat-card-title>Cadastrar Disciplina</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome" [(ngModel)]="disciplina.nome" name="nome">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Curso</mat-label>
+            <mat-select [(ngModel)]="disciplina.curso" name="curso">
+                <mat-option *ngFor="let curso of listaCursos" [value]="curso.key">
+                    {{ curso.value }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="fill">
+            <mat-label>Professor</mat-label>
+            <mat-select [(ngModel)]="disciplina.professorId" name="professor">
+                <mat-option *ngFor="let prof of professores" [value]="prof">
+                    {{ prof.name }} - Especialidade {{ prof.especialidade }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+    </form>
+    <button mat-raised-button (click)="salvar()" color="primary" [disabled]="ativarBotaoSalvar">
+        Salvar
+    </button>
+
+    <button mat-raised-button (click)="navigateDisciplinasPage()">
+        Cancelar
+    </button>
+</mat-card>

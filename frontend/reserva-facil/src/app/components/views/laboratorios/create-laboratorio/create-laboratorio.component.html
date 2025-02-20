@@ -1,0 +1,30 @@
+<mat-card>
+    <mat-card-title>Cadastrar Laboratório</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome do laboratório" [(ngModel)]="laboratorio.nome" name="laboratorio">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Capacidade Máxima" [(ngModel)]="laboratorio.capacidadeMaxima"
+                name="capacidadeMaxima">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Prédio" [(ngModel)]="laboratorio.predio" name="predio">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Sala" [(ngModel)]="laboratorio.sala" name="sala" >
+        </mat-form-field>
+
+
+    </form>
+    <button mat-raised-button (click)="salvar()" color="primary" [disabled]="ativarBotaoSalvar">
+        Salvar
+    </button>
+
+    <button mat-raised-button (click)="navigateLaboratoriosPage()">
+        Cancelar
+    </button>
+</mat-card>

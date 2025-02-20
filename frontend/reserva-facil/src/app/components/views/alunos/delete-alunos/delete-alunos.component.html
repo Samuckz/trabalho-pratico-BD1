@@ -1,0 +1,41 @@
+<mat-card>
+    <mat-card-title>Deletar Reserva</mat-card-title>
+    <form>
+
+        <mat-form-field>
+            <strong>
+                <input matInput placeholder="Matrícula aluno" [(ngModel)]="aluno.matricula" name="matricula"
+                    disabled="true">
+            </strong>
+        </mat-form-field>
+
+        <mat-form-field>
+            <strong>
+                <input matInput placeholder="Nome do aluno" [(ngModel)]="aluno.nome" name="laboratorio" disabled="true">
+            </strong>
+        </mat-form-field>
+
+        <mat-form-field>
+            <strong>
+                <input matInput placeholder="Data de nascimento" [value]="aluno.dataNascimento | date: 'dd/MM/yyyy'"
+                    name="dataNascimento" disabled="true">
+            </strong>
+        </mat-form-field>
+
+        <mat-form-field>
+            <strong>
+                <input matInput placeholder="Curso" [value]="obterNomeCurso(aluno.curso!)" name="curso" disabled="true">
+            </strong>
+        </mat-form-field>
+
+    </form>
+    <button mat-raised-button (click)="delete()" class="excluir">
+        Deletar
+    </button>
+
+    <button mat-raised-button (click)="navigateAlunosPage()" color="primary">
+        Cancelar
+    </button>
+</mat-card>
+
+<!-- TODO: Procurar sobre SnackBar -->
