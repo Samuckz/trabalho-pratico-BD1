@@ -17,5 +17,9 @@ export class CrudLaboratoriosComponent implements OnInit {
     this.router.navigate(['/laboratorios/create'])
   }
 
+  navigate(url: string){
+    this.router.navigate([url]);
+  }
+
 
 }

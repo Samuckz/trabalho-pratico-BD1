@@ -37,6 +37,10 @@ import { DisciplinasReadComponent } from './components/views/disciplinas/discipl
 import { DeleteDisciplinaComponent } from './components/views/disciplinas/delete-disciplina/delete-disciplina.component';
 import { UpdateDisciplinaComponent } from './components/views/disciplinas/update-disciplina/update-disciplina.component';
 import { CreateDisciplinaComponent } from './components/views/disciplinas/create-disciplina/create-disciplina.component';
+import { CrudMatriculasComponent } from './components/views/matriculas/crud-matriculas/crud-matriculas.component';
+import { ReadMatriculasComponent } from './components/views/matriculas/read-matriculas/read-matriculas.component';
+import { LaboratoriosSemReservasComponent } from './components/views/laboratorios/laboratorios-sem-reservas/laboratorios-sem-reservas.component';
+import { DisciplinasCheiasComponent } from './components/views/disciplinas/disciplinas-cheias/disciplinas-cheias.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +73,10 @@ import { CreateDisciplinaComponent } from './components/views/disciplinas/create
     DeleteDisciplinaComponent,
     UpdateDisciplinaComponent,
     CreateDisciplinaComponent,
+    CrudMatriculasComponent,
+    ReadMatriculasComponent,
+    LaboratoriosSemReservasComponent,
+    DisciplinasCheiasComponent,
   ],
   imports: [
     BrowserModule,

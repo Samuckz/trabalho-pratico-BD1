@@ -15,3 +15,11 @@ export interface DisciplinaRequestDTO {
     curso: CursosEnum,
     professorId?: number
 }
+
+export interface DisciplinaResponseDTO {
+    codigo: number,
+    nome: string,
+    curso: CursosEnum | null,
+    professorId?: ProfessorModel | null,
+    qntdAlunos: number
+}

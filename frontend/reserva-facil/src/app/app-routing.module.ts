@@ -20,6 +20,9 @@ import { UpdateProfessorComponent } from './components/views/professor/update-pr
 import { CreateReservasComponent } from './components/views/reservas/create-reservas/create-reservas.component';
 import { CrudReservasComponent } from './components/views/reservas/crud-reservas/crud-reservas.component';
 import { DeleteReservasComponent } from './components/views/reservas/delete-reservas/delete-reservas.component';
+import { CrudMatriculasComponent } from './components/views/matriculas/crud-matriculas/crud-matriculas.component';
+import { LaboratoriosSemReservasComponent } from './components/views/laboratorios/laboratorios-sem-reservas/laboratorios-sem-reservas.component';
+import { DisciplinasCheiasComponent } from './components/views/disciplinas/disciplinas-cheias/disciplinas-cheias.component';
 
 const routes: Routes = [
   {
@@ -87,6 +90,10 @@ const routes: Routes = [
     component: CreateLaboratorioComponent
   },
   {
+    path: "laboratorios/sem-reserva",
+    component: LaboratoriosSemReservasComponent
+  },
+  {
     path: "disciplinas",
     component: CrudDisciplinasComponent
   },
@@ -101,6 +108,14 @@ const routes: Routes = [
   {
     path: "disciplinas/create",
     component: CreateDisciplinaComponent
+  },
+  {
+    path: "disciplinas/disciplinas-capacidade-maxima",
+    component: DisciplinasCheiasComponent
+  },
+  {
+    path: "matriculas",
+    component: CrudMatriculasComponent
   },
 ];
 

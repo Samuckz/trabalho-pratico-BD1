@@ -5,6 +5,5 @@ export interface AlunoModel {
     matricula?: number,
     nome: string,
     dataNascimento: string, 
-    curso?: CursosEnum | null,
-    disciplinasMatriculadas?: DisciplinaModel[]
+    curso?: CursosEnum | null
   }

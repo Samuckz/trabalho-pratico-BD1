@@ -38,4 +38,10 @@ export class LaboratorioService {
     const urlConsultada = `${this.API}/${laboratorio.id}`
     return this.httpClient.put<LaboratorioModel>(urlConsultada, laboratorio)
   }
+
+  laboratoriosSemReservas(): Observable<LaboratorioModel[]> {
+    const urlConsultada = `${this.API}/sem-reservas`
+    return this.httpClient.get<LaboratorioModel[]>(urlConsultada);
+    
+  }
 }

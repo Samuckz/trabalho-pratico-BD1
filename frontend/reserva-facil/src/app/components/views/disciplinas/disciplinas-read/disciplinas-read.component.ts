@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DisciplinaModel } from 'src/app/interfaces/disciplina-model';
+import { DisciplinaModel, DisciplinaResponseDTO } from 'src/app/interfaces/disciplina-model';
 import { DisciplinaService } from 'src/app/services/disciplina.service';
 
 @Component({
@@ -9,15 +9,15 @@ import { DisciplinaService } from 'src/app/services/disciplina.service';
 })
 export class DisciplinasReadComponent implements OnInit {
 
-  disciplinas: DisciplinaModel[] = []
-  displayedColumns = ['codigo', 'nome', 'curso', 'professor', 'action']
+  disciplinas: DisciplinaResponseDTO[] = []
+  displayedColumns = ['codigo', 'nome', 'curso', 'professor', 'qtdAlunos', 'action']
 
   constructor(
     private service: DisciplinaService,
   ) { }
 
   ngOnInit(): void {
-    this.service.read().subscribe((disciplinas) => {
+    this.service.readForDisciplinaTable().subscribe((disciplinas) => {
       this.disciplinas = disciplinas
       console.log(disciplinas);
 

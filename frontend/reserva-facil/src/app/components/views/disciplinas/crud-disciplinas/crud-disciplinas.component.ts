@@ -13,7 +13,7 @@ export class CrudDisciplinasComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  navigateToDisciplinasCreate() {
-    this.router.navigate(['/disciplinas/create'])
+  navigate(url: string) {
+    this.router.navigate([url]);
   }
 }

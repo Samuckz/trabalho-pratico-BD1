@@ -102,7 +102,7 @@ export class CreateReservasComponent implements OnInit {
     const dataSelecionada = new Date(this.dadosHorario.data);
     const [hora, minuto] = this.dadosHorario.hora.split(':');
 
-    dataSelecionada.setHours(parseInt(hora));
+    dataSelecionada.setHours(parseInt(hora)-3);
     dataSelecionada.setMinutes(parseInt(minuto));
 
     this.reserva.agendamento = dataSelecionada.toISOString();
