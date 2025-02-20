@@ -1,9 +1,9 @@
 # Reserva Fácil Laboratórios
 
 ### Membros:
-Rávilla Noely dos Santos Moreira - 201512040134
-Samuel Viana Santana - 20203019863
-Tarcisio Batista Prates - 20193008761
+Rávilla Noely dos Santos Moreira - 201512040134 </br>
+Samuel Viana Santana - 20203019863 </br>
+Tarcisio Batista Prates - 20193008761 </br>
 
 O “Reserva Fácil Laboratórios” será um sistema de gerenciamento centralizado para a alocação de laboratórios em uma instituição de ensino. O objetivo principal é fornecer aos administradores uma ferramenta eficiente para organizar e cadastrar os horários de locação dos laboratórios, garantindo que os recursos sejam utilizados de maneira otimizada e sem conflitos.
 
