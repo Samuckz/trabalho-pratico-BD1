@@ -54,7 +54,7 @@ Certifique-se de ter as seguintes ferramentas instaladas:
 
 1. Navegue até a pasta do frontend:
    ```sh
-   cd ../frontend
+   cd ../frontend/reserva-facil
    ```
 2. Instale as dependências:
    ```sh
